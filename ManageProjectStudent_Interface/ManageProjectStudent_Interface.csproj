@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6ED2A8AE-C379-4B32-B1B3-DD96D53836B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ManageProjectStudent_Interface</RootNamespace>
+    <AssemblyName>ManageProjectStudent_Interface</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IAddGroupForSubject.cs" />
+    <Compile Include="IClass.cs" />
+    <Compile Include="IClassGroupOfSubject.cs" />
+    <Compile Include="ICourse.cs" />
+    <Compile Include="IDecentralize.cs" />
+    <Compile Include="IExamResult.cs" />
+    <Compile Include="IExamTimes.cs" />
+    <Compile Include="IFaculty.cs" />
+    <Compile Include="IForm.cs" />
+    <Compile Include="ILanguage.cs" />
+    <Compile Include="IManageClass.cs" />
+    <Compile Include="IManageCourse.cs" />
+    <Compile Include="IManageFaculty.cs" />
+    <Compile Include="IManageMultiLanguage.cs" />
+    <Compile Include="IProject.cs" />
+    <Compile Include="IManageSubject.cs" />
+    <Compile Include="IProjectTask.cs" />
+    <Compile Include="IResultProject.cs" />
+    <Compile Include="IStaff.cs" />
+    <Compile Include="IStaffType.cs" />
+    <Compile Include="IStudent.cs" />
+    <Compile Include="ISubject.cs" />
+    <Compile Include="ISubmitProject.cs" />
+    <Compile Include="IWord.cs" />
+    <Compile Include="IWordLanguage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManageProjectStudent_Model\ManageProjectStudent_Model.csproj">
+      <Project>{d9716c79-ef4d-4524-9bd8-b0ed55de0662}</Project>
+      <Name>ManageProjectStudent_Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
