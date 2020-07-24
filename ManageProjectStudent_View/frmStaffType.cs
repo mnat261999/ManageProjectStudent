@@ -17,6 +17,7 @@ using ManageProjectStudent_ViewModel;
 using ManageProjectStudent_Model;
 using DevExpress.XtraPrinting;
 using DevExpress.Export;
+using DevExpress.XtraEditors.Repository;
 
 namespace ManageProjectStudent_View
 {
@@ -36,13 +37,34 @@ namespace ManageProjectStudent_View
         private StaffModel StaffModel = null;
         private IDecentralize _Decen = Config.Container.Resolve<IDecentralize>();
         private DecentralizeModel Decentralize = null;
+
+        private IForm _Form = Config.Container.Resolve<IForm>();
         #endregion
         #region Method
+        private bool adddDecen(StaffTypeModel type)
+        {
+            BindingList<FormModel> _lstFrm = new BindingList<FormModel>();
+            _lstFrm = _Form.loadForm();
+            for (int i = 0; i< _lstFrm.Count; i++)
+            {
+                DecentralizeModel decens = new DecentralizeModel();
+                decens.StrStaffTypeID = type.StrStaffTypeID;
+                decens.StrFormID = _lstFrm[i].StrFormID;
+                if(_lstFrm[i].StrFormID != "frmDecentralization")
+                {
+                    decens.BView = true;
+                }
+                if (!_Decen.addNewDecentralize(decens))
+                    return false;
+            }
+            return true;
+        }
         private void _setStatusForm()
         {
             //txtID.ReadOnly = true;
             switch (_IStatusForm)
             {
+                
                 case 0: // View
                     grpInformationStaffType.Enabled = false;
                     if (_StaffTypeModelNow != null)
@@ -100,6 +122,7 @@ namespace ManageProjectStudent_View
 
         private void _loadData()
         {
+            
             if(_StaffTypeModelNow!= null)
             {
                 txtID.Text = string.Empty;
@@ -215,15 +238,15 @@ namespace ManageProjectStudent_View
                 }
                 else
                 {
-                    bool BAddecen = false;
+                   
                     if (_IStatusForm == 1)
                     {
-                        BAddecen = _Decen.addNewStaffType(_StaffTypeModelNow);
+                       if(adddDecen(_StaffTypeModelNow))
+                        {
+                            DevExpress.XtraEditors.XtraMessageBox.Show("Phân Quyền Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }    
                     }   
-                    if(BAddecen == true)
-                    {
-                        DevExpress.XtraEditors.XtraMessageBox.Show("Phân Quyền Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }    
+                   
 
                     _lstLoadListStaffType();
                     _IStatusForm = 0;
