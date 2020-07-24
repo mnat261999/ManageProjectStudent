@@ -165,36 +165,6 @@ namespace ManageProjectStudent_View
             }
         }
 
-        private void itemManageMultiLanguage_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
-        {
-           if(ICheck == 1)
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn không được sử dụng chức năng này", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-           else
-           {
-                if(lstDecent != null)
-                {
-                    frmManageLanguageMain frm = new frmManageLanguageMain(); 
-                    foreach (DecentralizeModel decentralize in lstDecent)
-                    {
-                        if(staffModel.StrStaffTypeID == decentralize.StrStaffTypeID && frm.Name == decentralize.StrFormID)
-                        {
-                            if(decentralize.BAdd == true || decentralize.BEdit == true || decentralize.BDelete==true || decentralize.BView==true)
-                            {
-                                frm.ShowDialog();
-                                break;
-                            }
-                            else
-                            {
-                                DevExpress.XtraEditors.XtraMessageBox.Show("Bạn không được sử dụng chức năng này", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                break;
-                            }
-                        }    
-                    }    
-                }    
-           }
-        }
 
         private void itemDecentralization_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
