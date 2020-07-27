@@ -140,6 +140,8 @@ namespace ManageProjectStudent_View
         //load
         private void frmManageFaculty_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -218,14 +220,6 @@ namespace ManageProjectStudent_View
             gcListFaculty.DataSource = _lstFaculty;
         }
 
-        private void btnExitFormManageCourse_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmHome frmHome = new frmHome();
-            frmHome.ShowDialog();
-            this.Close();
-        }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtFacultyID.Text == "")
@@ -265,6 +259,12 @@ namespace ManageProjectStudent_View
                     DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void btnExitFormManageFaculty_Click(object sender, EventArgs e)
+        {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
+            this.Close();
         }
 
         //keypress
@@ -335,6 +335,5 @@ namespace ManageProjectStudent_View
         #endregion
 
         #endregion
-
     }
 }

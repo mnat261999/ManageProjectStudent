@@ -223,6 +223,8 @@ namespace ManageProjectStudent_View
         //load
         private void frmManageStudentInformation_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if(frmHome.lstDecent != null)
             {
@@ -491,9 +493,10 @@ namespace ManageProjectStudent_View
 
         private void btnExitFormManageStudent_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
             //frmHome frmHome = new frmHome(IStatus, StaffModel);
             //frmHome.ShowDialog();
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
 

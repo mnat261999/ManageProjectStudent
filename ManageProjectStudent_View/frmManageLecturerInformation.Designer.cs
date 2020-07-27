@@ -39,6 +39,8 @@
             this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.grpInformationLecturer = new DevExpress.XtraEditors.GroupControl();
+            this.lkeStaffType = new DevExpress.XtraEditors.LookUpEdit();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.radAvailable = new System.Windows.Forms.RadioButton();
             this.radUnavailable = new System.Windows.Forms.RadioButton();
@@ -73,6 +75,8 @@
             this.colAddress = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPhoneNumber = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStaffType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.LookUpEdit_StaffType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colFaculty = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Faculty = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColSex = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,6 +86,7 @@
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLecturer)).BeginInit();
             this.grpInformationLecturer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkeFaculty.Properties)).BeginInit();
@@ -89,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dteBirthday.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListLecturer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLecturerList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_StaffType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Faculty)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +134,7 @@
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Giảng Viên";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -152,6 +159,7 @@
             this.btnDelete.TabIndex = 11;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa Giảng Viên";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -178,6 +186,7 @@
             this.btnAdd.TabIndex = 10;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Giảng Viên";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelLogo
             // 
@@ -253,6 +262,8 @@
             this.grpInformationLecturer.Appearance.Options.UseFont = true;
             this.grpInformationLecturer.AppearanceCaption.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.grpInformationLecturer.AppearanceCaption.Options.UseFont = true;
+            this.grpInformationLecturer.Controls.Add(this.lkeStaffType);
+            this.grpInformationLecturer.Controls.Add(this.label11);
             this.grpInformationLecturer.Controls.Add(this.panel2);
             this.grpInformationLecturer.Controls.Add(this.panel1);
             this.grpInformationLecturer.Controls.Add(this.btnSave);
@@ -280,11 +291,36 @@
             this.grpInformationLecturer.TabIndex = 9;
             this.grpInformationLecturer.Text = "Thông Tin Giảng Viên";
             // 
+            // lkeStaffType
+            // 
+            this.lkeStaffType.Location = new System.Drawing.Point(466, 91);
+            this.lkeStaffType.Name = "lkeStaffType";
+            this.lkeStaffType.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lkeStaffType.Properties.Appearance.Options.UseFont = true;
+            this.lkeStaffType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkeStaffType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colStaffTypeName", "Loại nhân viên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colStaffTypeID", "Mã loại nhân viên")});
+            this.lkeStaffType.Properties.NullText = "Loại nhân viên";
+            this.lkeStaffType.Size = new System.Drawing.Size(193, 24);
+            this.lkeStaffType.TabIndex = 126;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(338, 93);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(101, 17);
+            this.label11.TabIndex = 125;
+            this.label11.Text = "Loại nhân viên";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.radAvailable);
             this.panel2.Controls.Add(this.radUnavailable);
-            this.panel2.Location = new System.Drawing.Point(831, 121);
+            this.panel2.Location = new System.Drawing.Point(466, 121);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 22);
             this.panel2.TabIndex = 122;
@@ -319,7 +355,7 @@
             // 
             this.panel1.Controls.Add(this.radNam);
             this.panel1.Controls.Add(this.radNu);
-            this.panel1.Location = new System.Drawing.Point(831, 91);
+            this.panel1.Location = new System.Drawing.Point(127, 123);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 24);
             this.panel1.TabIndex = 121;
@@ -378,7 +414,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(727, 121);
+            this.label1.Location = new System.Drawing.Point(367, 125);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
@@ -387,7 +423,7 @@
             // 
             // lkeFaculty
             // 
-            this.lkeFaculty.Location = new System.Drawing.Point(466, 91);
+            this.lkeFaculty.Location = new System.Drawing.Point(831, 91);
             this.lkeFaculty.Name = "lkeFaculty";
             this.lkeFaculty.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lkeFaculty.Properties.Appearance.Options.UseFont = true;
@@ -395,7 +431,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkeFaculty.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFacultyName", "Tên khoa"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFacultyID", "Mã khoa", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFacultyID", "Mã khoa")});
             this.lkeFaculty.Properties.NullText = "Khoa";
             this.lkeFaculty.Size = new System.Drawing.Size(193, 24);
             this.lkeFaculty.TabIndex = 93;
@@ -403,7 +439,7 @@
             // dteBirthday
             // 
             this.dteBirthday.EditValue = null;
-            this.dteBirthday.Location = new System.Drawing.Point(143, 60);
+            this.dteBirthday.Location = new System.Drawing.Point(128, 60);
             this.dteBirthday.Name = "dteBirthday";
             this.dteBirthday.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dteBirthday.Properties.Appearance.Options.UseFont = true;
@@ -416,7 +452,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(143, 90);
+            this.txtEmail.Location = new System.Drawing.Point(128, 90);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(193, 25);
             this.txtEmail.TabIndex = 102;
@@ -454,7 +490,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(143, 29);
+            this.txtID.Location = new System.Drawing.Point(128, 29);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(193, 25);
             this.txtID.TabIndex = 97;
@@ -463,7 +499,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(732, 91);
+            this.label10.Location = new System.Drawing.Point(34, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 17);
             this.label10.TabIndex = 16;
@@ -473,7 +509,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(397, 93);
+            this.label9.Location = new System.Drawing.Point(757, 90);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 14;
@@ -483,7 +519,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(71, 93);
+            this.label8.Location = new System.Drawing.Point(56, 93);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 17);
             this.label8.TabIndex = 12;
@@ -513,7 +549,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(43, 63);
+            this.label5.Location = new System.Drawing.Point(28, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 6;
@@ -543,7 +579,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(20, 32);
+            this.label2.Location = new System.Drawing.Point(5, 32);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 0;
@@ -555,7 +591,8 @@
             this.gcListLecturer.MainView = this.gvLecturerList;
             this.gcListLecturer.Name = "gcListLecturer";
             this.gcListLecturer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.LookUpEdit_Faculty});
+            this.LookUpEdit_Faculty,
+            this.LookUpEdit_StaffType});
             this.gcListLecturer.Size = new System.Drawing.Size(1130, 274);
             this.gcListLecturer.TabIndex = 11;
             this.gcListLecturer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -587,6 +624,7 @@
             this.colAddress,
             this.colPhoneNumber,
             this.colEmail,
+            this.colStaffType,
             this.colFaculty,
             this.ColSex,
             this.colStatus});
@@ -694,6 +732,27 @@
             this.colEmail.VisibleIndex = 6;
             this.colEmail.Width = 63;
             // 
+            // colStaffType
+            // 
+            this.colStaffType.Caption = "Loại nhân viên";
+            this.colStaffType.ColumnEdit = this.LookUpEdit_StaffType;
+            this.colStaffType.FieldName = "StrStaffTypeID";
+            this.colStaffType.Name = "colStaffType";
+            this.colStaffType.Visible = true;
+            this.colStaffType.VisibleIndex = 7;
+            // 
+            // LookUpEdit_StaffType
+            // 
+            this.LookUpEdit_StaffType.AutoHeight = false;
+            this.LookUpEdit_StaffType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.LookUpEdit_StaffType.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colStaffTypeName", "Loại nhân viên"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colStaffTypeID", "Mã loại nhân viên")});
+            this.LookUpEdit_StaffType.DisplayMember = "StrStaffTypeName";
+            this.LookUpEdit_StaffType.Name = "LookUpEdit_StaffType";
+            this.LookUpEdit_StaffType.ValueMember = "StrStaffTypeID";
+            // 
             // colFaculty
             // 
             this.colFaculty.AppearanceCell.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -705,7 +764,7 @@
             this.colFaculty.FieldName = "StrFacultyID";
             this.colFaculty.Name = "colFaculty";
             this.colFaculty.Visible = true;
-            this.colFaculty.VisibleIndex = 7;
+            this.colFaculty.VisibleIndex = 8;
             this.colFaculty.Width = 63;
             // 
             // LookUpEdit_Faculty
@@ -730,7 +789,7 @@
             this.ColSex.FieldName = "StrSex";
             this.ColSex.Name = "ColSex";
             this.ColSex.Visible = true;
-            this.ColSex.VisibleIndex = 8;
+            this.ColSex.VisibleIndex = 9;
             this.ColSex.Width = 63;
             // 
             // colStatus
@@ -739,7 +798,7 @@
             this.colStatus.FieldName = "BStatus";
             this.colStatus.Name = "colStatus";
             this.colStatus.Visible = true;
-            this.colStatus.VisibleIndex = 9;
+            this.colStatus.VisibleIndex = 10;
             // 
             // btnExport
             // 
@@ -785,6 +844,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLecturer)).EndInit();
             this.grpInformationLecturer.ResumeLayout(false);
             this.grpInformationLecturer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lkeStaffType.Properties)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -794,6 +854,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dteBirthday.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcListLecturer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvLecturerList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_StaffType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LookUpEdit_Faculty)).EndInit();
             this.ResumeLayout(false);
 
@@ -850,5 +911,9 @@
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SimpleButton btnExport;
+        private DevExpress.XtraEditors.LookUpEdit lkeStaffType;
+        private System.Windows.Forms.Label label11;
+        private DevExpress.XtraGrid.Columns.GridColumn colStaffType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_StaffType;
     }
 }

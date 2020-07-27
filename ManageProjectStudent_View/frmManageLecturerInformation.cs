@@ -31,6 +31,9 @@ namespace ManageProjectStudent_View
         private IStaff _Staff = Config.Container.Resolve<IStaff>();
         private IFaculty _Faculty = Config.Container.Resolve<IFaculty>();
 
+        private BindingList<StaffTypeModel> _lstStaffType = new BindingList<StaffTypeModel>();
+        private IStaffType _StaffType = Config.Container.Resolve<IStaffType>();
+
         private int _IStatusForm = 0;
         private StaffModel _LecturerModelNow = null;
         private BindingList<StaffModel> _lstLecturer = new BindingList<StaffModel>();
@@ -93,7 +96,7 @@ namespace ManageProjectStudent_View
                     {
                         btnUpdate.Enabled = false;
                         btnDelete.Enabled = false;
-                    }    
+                    }
                     //else
                     //{
                     //    btnUpdate.Enabled = true;
@@ -108,6 +111,7 @@ namespace ManageProjectStudent_View
                     txtAddress.Text = string.Empty;
                     txtPhoneNumber.Text = string.Empty;
                     txtEmail.Text = string.Empty;
+                    lkeStaffType.EditValue = null;
                     lkeFaculty.EditValue = null;
                     radNam.Checked = false;
                     radNu.Checked = false;
@@ -129,7 +133,7 @@ namespace ManageProjectStudent_View
 
         private void _loadData()
         {
-            if (_LecturerModelNow==null)
+            if (_LecturerModelNow == null)
             {
                 txtID.Text = string.Empty;
                 txtFullName.Text = string.Empty;
@@ -138,12 +142,13 @@ namespace ManageProjectStudent_View
                 txtAddress.Text = string.Empty;
                 txtPhoneNumber.Text = string.Empty;
                 txtEmail.Text = string.Empty;
+                lkeStaffType.EditValue = null;
                 lkeFaculty.EditValue = null;
                 radNam.Checked = false;
                 radNu.Checked = false;
                 radAvailable.Checked = false;
                 radUnavailable.Checked = false;
-            }   
+            }
             else
             {
                 txtID.Text = _LecturerModelNow.StrStaffID;
@@ -153,6 +158,7 @@ namespace ManageProjectStudent_View
                 txtAddress.Text = _LecturerModelNow.StrAddress;
                 txtPhoneNumber.Text = _LecturerModelNow.StrPhone;
                 txtEmail.Text = _LecturerModelNow.StrEmail;
+                lkeStaffType.EditValue = _LecturerModelNow.StrStaffTypeID;
                 lkeFaculty.EditValue = _LecturerModelNow.StrFacultyID;
                 if (_LecturerModelNow.StrSex == "Nam")
                 {
@@ -175,7 +181,7 @@ namespace ManageProjectStudent_View
                     radAvailable.Checked = false;
                     radUnavailable.Checked = true;
                 }
-            }    
+            }
         }
 
         private void _getData()
@@ -191,6 +197,7 @@ namespace ManageProjectStudent_View
             _LecturerModelNow.StrAddress = txtAddress.Text;
             _LecturerModelNow.StrPhone = txtPhoneNumber.Text;
             _LecturerModelNow.StrEmail = txtEmail.Text;
+            _LecturerModelNow.StrStaffTypeID = lkeStaffType.GetColumnValue("StrStaffTypeID").ToString();
             _LecturerModelNow.StrFacultyID = lkeFaculty.GetColumnValue("StrFacultyID").ToString();
             if (radNam.Checked)
             {
@@ -225,6 +232,15 @@ namespace ManageProjectStudent_View
             //        }
             //    }
             //}
+            foreach (StaffModel st in _lstLecturer)
+            {
+                if (st.StrStaffTypeID == "Adms")
+                {
+                    _lstLecturer.Remove(st);
+                    break;
+                    // _lstLecturer = _Staff.loadStaff();
+                }
+            }
             gcListLecturer.DataSource = _lstLecturer;
         }
 
@@ -233,6 +249,8 @@ namespace ManageProjectStudent_View
         //load
         private void frmManageLecturerInformation_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -255,13 +273,42 @@ namespace ManageProjectStudent_View
             lkeFaculty.Properties.Columns["colFacultyID"].FieldName = "StrFacultyID";
             lkeFaculty.Properties.Columns["colFacultyName"].FieldName = "StrFacultyName";
 
+            _lstStaffType = _StaffType.loadStaffType();
+            lkeStaffType.Properties.ValueMember = "StrStaffTypeID";
+            lkeStaffType.Properties.DisplayMember = "StrStaffTypeName";
+            lkeStaffType.Properties.DataSource = _lstStaffType;
+            lkeStaffType.Properties.Columns["colStaffTypeID"].FieldName = "StrStaffTypeID";
+            lkeStaffType.Properties.Columns["colStaffTypeName"].FieldName = "StrStaffTypeName";
+
+            foreach (StaffTypeModel staff in _lstStaffType)
+            {
+                if (staff.StrStaffTypeID == StaffModel.StrStaffTypeID || staff.StrStaffTypeID == "Adms")
+                {
+                    _lstStaffType.Remove(staff);
+                    _lstStaffType = _StaffType.loadStaffType();
+                    break;
+                }
+            }
+
             ///*GridView*/
             _lstLecturer = _Staff.loadStaff();
-
             LookUpEdit_Faculty.DataSource = _lstFaculty;
             LookUpEdit_Faculty.Columns["colFacultyID"].FieldName = "StrFacultyID";
             LookUpEdit_Faculty.Columns["colFacultyName"].FieldName = "StrFacultyName";
 
+            LookUpEdit_StaffType.DataSource = _lstStaffType;
+            LookUpEdit_StaffType.Columns["colStaffTypeID"].FieldName = "StrStaffTypeID";
+            LookUpEdit_StaffType.Columns["colStaffTypeName"].FieldName = "StrStaffTypeName";
+
+            foreach (StaffModel st in _lstLecturer)
+            {
+                if (st.StrStaffTypeID == "Adms")
+                {
+                    _lstLecturer.Remove(st);
+                    break;
+                    // _lstLecturer = _Staff.loadStaff();
+                }
+            }
             gcListLecturer.DataSource = _lstLecturer;
             _setStatusForm();
         }
@@ -335,6 +382,7 @@ namespace ManageProjectStudent_View
         }
 
         //click
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             _LecturerModelNow = null;
@@ -383,10 +431,10 @@ namespace ManageProjectStudent_View
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("Bạn chưa nhập Chứng minh nhân dân", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (_Staff.checkStaffID(txtID.Text) == true)
-            {
-                DevExpress.XtraEditors.XtraMessageBox.Show("Mã số nhân viên bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            //else if (_Staff.checkStaffID(txtID.Text) == true)
+            //{
+            //    DevExpress.XtraEditors.XtraMessageBox.Show("Mã số nhân viên bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
             else if (_Staff.checkCardID(txtID.Text) == true)
             {
                 DevExpress.XtraEditors.XtraMessageBox.Show("CMND bị trùng", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -424,7 +472,7 @@ namespace ManageProjectStudent_View
             {
                 _getData();
                 bool bresult = false;
-                if(_IStatusForm == 1)
+                if (_IStatusForm == 1)
                 {
                     bresult = _Staff.addNewStaff(_LecturerModelNow);
                 }
@@ -433,7 +481,7 @@ namespace ManageProjectStudent_View
                     bresult = _Staff.updateCurrentStaff(_LecturerModelNow);
                 }
 
-                if(!bresult)
+                if (!bresult)
                 {
                     DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -444,11 +492,11 @@ namespace ManageProjectStudent_View
                     _setStatusForm();
                     DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-            }    
+            }
         }
-
         private void btnExitFormManageLecturer_Click(object sender, EventArgs e)
         {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             //this.Hide();
             //frmHome frmHome = new frmHome();
             //frmHome.ShowDialog();

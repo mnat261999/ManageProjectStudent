@@ -36,7 +36,6 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
             this.btnReLoad = new System.Windows.Forms.Button();
-            this.btnExitFormManageCourse = new System.Windows.Forms.Button();
             this.btnExitFormDecentralization = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.simpleButton7 = new DevExpress.XtraEditors.SimpleButton();
@@ -70,6 +69,7 @@
             this.LookUpEdit_Faculty = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colCourse = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Course = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -97,7 +97,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(174, 520);
+            this.panelMenu.Size = new System.Drawing.Size(174, 492);
             this.panelMenu.TabIndex = 7;
             // 
             // btnUpdate
@@ -117,13 +117,12 @@
             this.btnUpdate.AppearanceHovered.Options.UseFont = true;
             this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(6, 339);
+            this.btnUpdate.Location = new System.Drawing.Point(3, 316);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(165, 64);
-            this.btnUpdate.TabIndex = 126;
+            this.btnUpdate.TabIndex = 129;
             this.btnUpdate.TabStop = false;
-            this.btnUpdate.Text = "Sửa Khóa Học";
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnUpdate.Text = "Sửa Lớp Học";
             // 
             // btnDelete
             // 
@@ -142,13 +141,12 @@
             this.btnDelete.AppearanceHovered.Options.UseFont = true;
             this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(6, 425);
+            this.btnDelete.Location = new System.Drawing.Point(3, 402);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(164, 64);
-            this.btnDelete.TabIndex = 125;
+            this.btnDelete.TabIndex = 128;
             this.btnDelete.TabStop = false;
-            this.btnDelete.Text = "Xóa Khóa Học";
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Text = "Xóa Lớp Học";
             // 
             // btnAdd
             // 
@@ -169,13 +167,12 @@
             this.btnAdd.AppearanceHovered.Options.UseForeColor = true;
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(6, 253);
+            this.btnAdd.Location = new System.Drawing.Point(3, 230);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(165, 64);
-            this.btnAdd.TabIndex = 124;
+            this.btnAdd.TabIndex = 127;
             this.btnAdd.TabStop = false;
-            this.btnAdd.Text = "Thêm Khóa Học";
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Text = "Thêm Lớp Học";
             // 
             // panelLogo
             // 
@@ -191,8 +188,8 @@
             // panelTitleBar
             // 
             this.panelTitleBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(135)))), ((int)(((byte)(137)))));
+            this.panelTitleBar.Controls.Add(this.btnExitFormManageLecturer);
             this.panelTitleBar.Controls.Add(this.btnReLoad);
-            this.panelTitleBar.Controls.Add(this.btnExitFormManageCourse);
             this.panelTitleBar.Controls.Add(this.btnExitFormDecentralization);
             this.panelTitleBar.Controls.Add(this.groupControl1);
             this.panelTitleBar.Controls.Add(this.lblTitle);
@@ -218,21 +215,6 @@
             this.btnReLoad.TabIndex = 12;
             this.btnReLoad.UseVisualStyleBackColor = true;
             this.btnReLoad.Click += new System.EventHandler(this.btnReLoad_Click);
-            // 
-            // btnExitFormManageCourse
-            // 
-            this.btnExitFormManageCourse.FlatAppearance.BorderSize = 0;
-            this.btnExitFormManageCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitFormManageCourse.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitFormManageCourse.ForeColor = System.Drawing.Color.White;
-            this.btnExitFormManageCourse.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageCourse.Image")));
-            this.btnExitFormManageCourse.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExitFormManageCourse.Location = new System.Drawing.Point(857, 0);
-            this.btnExitFormManageCourse.Name = "btnExitFormManageCourse";
-            this.btnExitFormManageCourse.Size = new System.Drawing.Size(70, 87);
-            this.btnExitFormManageCourse.TabIndex = 11;
-            this.btnExitFormManageCourse.UseVisualStyleBackColor = true;
-            this.btnExitFormManageCourse.Click += new System.EventHandler(this.btnExitFormManageCourse_Click);
             // 
             // btnExitFormDecentralization
             // 
@@ -384,9 +366,9 @@
             this.grpInformationClass.Controls.Add(this.txtClassID);
             this.grpInformationClass.Controls.Add(this.label6);
             this.grpInformationClass.Controls.Add(this.label1);
-            this.grpInformationClass.Location = new System.Drawing.Point(213, 93);
+            this.grpInformationClass.Location = new System.Drawing.Point(191, 93);
             this.grpInformationClass.Name = "grpInformationClass";
-            this.grpInformationClass.Size = new System.Drawing.Size(854, 192);
+            this.grpInformationClass.Size = new System.Drawing.Size(898, 158);
             this.grpInformationClass.TabIndex = 9;
             this.grpInformationClass.Text = "Nhập thông tin lớp";
             // 
@@ -407,9 +389,9 @@
             this.btnSave.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnSave.Location = new System.Drawing.Point(357, 149);
+            this.btnSave.Location = new System.Drawing.Point(364, 115);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(154, 38);
+            this.btnSave.Size = new System.Drawing.Size(136, 38);
             this.btnSave.TabIndex = 125;
             this.btnSave.TabStop = false;
             this.btnSave.Text = "Lưu";
@@ -417,20 +399,23 @@
             // 
             // lkeCourse
             // 
-            this.lkeCourse.Location = new System.Drawing.Point(561, 100);
+            this.lkeCourse.Location = new System.Drawing.Point(562, 63);
             this.lkeCourse.Name = "lkeCourse";
+            this.lkeCourse.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeCourse.Properties.Appearance.Options.UseFont = true;
             this.lkeCourse.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkeCourse.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colCourseID", "Khóa")});
-            this.lkeCourse.Size = new System.Drawing.Size(190, 20);
+            this.lkeCourse.Properties.NullText = "Khóa";
+            this.lkeCourse.Size = new System.Drawing.Size(190, 24);
             this.lkeCourse.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(497, 103);
+            this.label9.Location = new System.Drawing.Point(498, 66);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 7;
@@ -438,21 +423,24 @@
             // 
             // lkeFaculty
             // 
-            this.lkeFaculty.Location = new System.Drawing.Point(561, 51);
+            this.lkeFaculty.Location = new System.Drawing.Point(562, 33);
             this.lkeFaculty.Name = "lkeFaculty";
+            this.lkeFaculty.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lkeFaculty.Properties.Appearance.Options.UseFont = true;
             this.lkeFaculty.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lkeFaculty.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFacultyName", "Khoa"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("colFacultyID", "Mã khoa")});
-            this.lkeFaculty.Size = new System.Drawing.Size(190, 20);
+            this.lkeFaculty.Properties.NullText = "Khoa";
+            this.lkeFaculty.Size = new System.Drawing.Size(190, 24);
             this.lkeFaculty.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(497, 51);
+            this.label8.Location = new System.Drawing.Point(498, 38);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 17);
             this.label8.TabIndex = 5;
@@ -460,16 +448,17 @@
             // 
             // txtClassName
             // 
-            this.txtClassName.Location = new System.Drawing.Point(163, 103);
+            this.txtClassName.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClassName.Location = new System.Drawing.Point(164, 63);
             this.txtClassName.Name = "txtClassName";
-            this.txtClassName.Size = new System.Drawing.Size(190, 21);
+            this.txtClassName.Size = new System.Drawing.Size(190, 25);
             this.txtClassName.TabIndex = 4;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(87, 103);
+            this.label7.Location = new System.Drawing.Point(88, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 17);
             this.label7.TabIndex = 3;
@@ -477,16 +466,17 @@
             // 
             // txtClassID
             // 
-            this.txtClassID.Location = new System.Drawing.Point(163, 49);
+            this.txtClassID.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClassID.Location = new System.Drawing.Point(164, 33);
             this.txtClassID.Name = "txtClassID";
-            this.txtClassID.Size = new System.Drawing.Size(190, 21);
+            this.txtClassID.Size = new System.Drawing.Size(190, 25);
             this.txtClassID.TabIndex = 2;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(87, 49);
+            this.label6.Location = new System.Drawing.Point(94, 33);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 1;
@@ -495,7 +485,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 54);
+            this.label1.Location = new System.Drawing.Point(96, 41);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 0;
@@ -503,13 +493,13 @@
             // 
             // gcListClass
             // 
-            this.gcListClass.Location = new System.Drawing.Point(213, 291);
+            this.gcListClass.Location = new System.Drawing.Point(191, 257);
             this.gcListClass.MainView = this.gvClassList;
             this.gcListClass.Name = "gcListClass";
             this.gcListClass.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEdit_Faculty,
             this.LookUpEdit_Course});
-            this.gcListClass.Size = new System.Drawing.Size(859, 175);
+            this.gcListClass.Size = new System.Drawing.Size(898, 223);
             this.gcListClass.TabIndex = 126;
             this.gcListClass.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvClassList});
@@ -522,7 +512,7 @@
             this.gvClassList.Appearance.HeaderPanel.Options.UseFont = true;
             this.gvClassList.Appearance.OddRow.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.gvClassList.Appearance.OddRow.Options.UseFont = true;
-            this.gvClassList.Appearance.ViewCaption.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gvClassList.Appearance.ViewCaption.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gvClassList.Appearance.ViewCaption.Options.UseFont = true;
             this.gvClassList.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colClassID,
@@ -600,17 +590,34 @@
             this.LookUpEdit_Course.Name = "LookUpEdit_Course";
             this.LookUpEdit_Course.ValueMember = "StrCourseID";
             // 
+            // btnExitFormManageLecturer
+            // 
+            this.btnExitFormManageLecturer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitFormManageLecturer.FlatAppearance.BorderSize = 0;
+            this.btnExitFormManageLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitFormManageLecturer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitFormManageLecturer.ForeColor = System.Drawing.Color.White;
+            this.btnExitFormManageLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageLecturer.Image")));
+            this.btnExitFormManageLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(857, 0);
+            this.btnExitFormManageLecturer.Name = "btnExitFormManageLecturer";
+            this.btnExitFormManageLecturer.Size = new System.Drawing.Size(70, 87);
+            this.btnExitFormManageLecturer.TabIndex = 13;
+            this.btnExitFormManageLecturer.UseVisualStyleBackColor = true;
+            this.btnExitFormManageLecturer.Click += new System.EventHandler(this.btnExitFormManageLecturer_Click);
+            // 
             // frmManageClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1101, 520);
+            this.ClientSize = new System.Drawing.Size(1101, 492);
             this.Controls.Add(this.gcListClass);
             this.Controls.Add(this.grpInformationClass);
             this.Controls.Add(this.panelTitleBar);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManageClass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageClass";
             this.Load += new System.EventHandler(this.frmManageClass_Load);
             this.panelMenu.ResumeLayout(false);
@@ -641,7 +648,6 @@
         private System.Windows.Forms.Panel panelLogo;
         private System.Windows.Forms.Panel panelTitleBar;
         private System.Windows.Forms.Button btnReLoad;
-        private System.Windows.Forms.Button btnExitFormManageCourse;
         private System.Windows.Forms.Button btnExitFormDecentralization;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton simpleButton7;
@@ -666,9 +672,6 @@
         private System.Windows.Forms.TextBox txtClassID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton btnUpdate;
-        private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraGrid.GridControl gcListClass;
         private DevExpress.XtraGrid.Views.Grid.GridView gvClassList;
         private DevExpress.XtraEditors.SimpleButton btnSave;
@@ -678,5 +681,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCourse;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Faculty;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_Course;
+        private DevExpress.XtraEditors.SimpleButton btnUpdate;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
+        private System.Windows.Forms.Button btnExitFormManageLecturer;
     }
 }

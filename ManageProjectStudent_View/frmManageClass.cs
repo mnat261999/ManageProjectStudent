@@ -153,6 +153,8 @@ namespace ManageProjectStudent_View
         //load
         private void frmManageClass_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -296,14 +298,14 @@ namespace ManageProjectStudent_View
             gcListClass.DataSource = _lstClass;
         }
 
-        private void btnExitFormManageCourse_Click(object sender, EventArgs e)
+        private void btnExitFormManageLecturer_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmHome frmHome = new frmHome();
-            frmHome.ShowDialog();
+            //this.Hide();
+            //frmHome frmHome = new frmHome();
+            //frmHome.ShowDialog();
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
-
         //stt
         private void gvClassList_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
         {
@@ -360,5 +362,6 @@ namespace ManageProjectStudent_View
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
         #endregion
+
     }
 }

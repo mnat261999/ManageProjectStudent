@@ -85,7 +85,7 @@
             this.txtUsers.FocusedBaseColor = System.Drawing.Color.White;
             this.txtUsers.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtUsers.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtUsers.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtUsers.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsers.ForeColor = System.Drawing.Color.White;
             this.txtUsers.Location = new System.Drawing.Point(272, 135);
             this.txtUsers.Name = "txtUsers";
@@ -105,7 +105,7 @@
             this.txtPassword.FocusedBaseColor = System.Drawing.Color.White;
             this.txtPassword.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.txtPassword.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtPassword.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.ForeColor = System.Drawing.Color.White;
             this.txtPassword.Location = new System.Drawing.Point(272, 222);
             this.txtPassword.Name = "txtPassword";

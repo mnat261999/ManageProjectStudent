@@ -151,6 +151,8 @@ namespace ManageProjectStudent_View
         #region Event
         private void frmManageProject_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -312,6 +314,7 @@ namespace ManageProjectStudent_View
 
         private void btnCloseChildForm_Click(object sender, EventArgs e)
         {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Hide();
             frmManageProjectMain frmManageProjectMain = new frmManageProjectMain();
             frmManageProjectMain.ShowDialog();

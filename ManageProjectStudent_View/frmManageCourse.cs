@@ -136,6 +136,8 @@ namespace ManageProjectStudent_View
         //load
         private void frmManageCourse_Load(object sender, EventArgs e)
         {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
             StaffModel = frmHome.staffModel;
             if (frmHome.lstDecent != null)
             {
@@ -260,12 +262,9 @@ namespace ManageProjectStudent_View
 
         private void btnExitFormManageCourse_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmHome frmHome = new frmHome();
-            frmHome.ShowDialog();
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
-
         //stt
 
         private void gvListCourse_CustomDrawRowIndicator(object sender, RowIndicatorCustomDrawEventArgs e)
