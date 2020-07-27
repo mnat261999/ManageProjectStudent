@@ -208,6 +208,21 @@ namespace ManageProjectStudent_View
         }
 
         //click
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            _ClassModelNow = null;
+            _IStatusForm = 1;
+            _setStatusForm();
+            txtClassID.Focus();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            _IStatusForm = 2;
+            _setStatusForm();
+            txtClassID.Focus();
+        }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
             if (_ClassModelNow != null)
@@ -228,14 +243,6 @@ namespace ManageProjectStudent_View
                     DevExpress.XtraEditors.XtraMessageBox.Show("Xóa Thất Bại!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            _ClassModelNow = null;
-            _IStatusForm = 1;
-            _setStatusForm();
-            txtClassID.Focus();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -281,13 +288,6 @@ namespace ManageProjectStudent_View
                     DevExpress.XtraEditors.XtraMessageBox.Show("Lưu Thành Công!", "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            _IStatusForm = 2;
-            _setStatusForm();
-            txtClassID.Focus();
         }
 
         private void btnReLoad_Click(object sender, EventArgs e)
@@ -362,6 +362,5 @@ namespace ManageProjectStudent_View
             gridview.IndicatorWidth = Convert.ToInt32(size.Width + 0.999f) + GridPainter.Indicator.ImageSize.Width + 20;
         }
         #endregion
-
     }
 }

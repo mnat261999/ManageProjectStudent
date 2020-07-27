@@ -35,6 +35,7 @@
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.panelLogo = new System.Windows.Forms.Panel();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.btnReLoad = new System.Windows.Forms.Button();
             this.btnExitFormDecentralization = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
@@ -69,7 +70,6 @@
             this.LookUpEdit_Faculty = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.colCourse = new DevExpress.XtraGrid.Columns.GridColumn();
             this.LookUpEdit_Course = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.btnExitFormManageLecturer = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -123,6 +123,7 @@
             this.btnUpdate.TabIndex = 129;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Lớp Học";
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -147,6 +148,7 @@
             this.btnDelete.TabIndex = 128;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa Lớp Học";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -173,6 +175,7 @@
             this.btnAdd.TabIndex = 127;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Lớp Học";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panelLogo
             // 
@@ -199,6 +202,22 @@
             this.panelTitleBar.Name = "panelTitleBar";
             this.panelTitleBar.Size = new System.Drawing.Size(927, 87);
             this.panelTitleBar.TabIndex = 8;
+            // 
+            // btnExitFormManageLecturer
+            // 
+            this.btnExitFormManageLecturer.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitFormManageLecturer.FlatAppearance.BorderSize = 0;
+            this.btnExitFormManageLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitFormManageLecturer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitFormManageLecturer.ForeColor = System.Drawing.Color.White;
+            this.btnExitFormManageLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageLecturer.Image")));
+            this.btnExitFormManageLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(857, 0);
+            this.btnExitFormManageLecturer.Name = "btnExitFormManageLecturer";
+            this.btnExitFormManageLecturer.Size = new System.Drawing.Size(70, 87);
+            this.btnExitFormManageLecturer.TabIndex = 13;
+            this.btnExitFormManageLecturer.UseVisualStyleBackColor = true;
+            this.btnExitFormManageLecturer.Click += new System.EventHandler(this.btnExitFormManageLecturer_Click);
             // 
             // btnReLoad
             // 
@@ -589,22 +608,6 @@
             this.LookUpEdit_Course.DisplayMember = "StrCourseID";
             this.LookUpEdit_Course.Name = "LookUpEdit_Course";
             this.LookUpEdit_Course.ValueMember = "StrCourseID";
-            // 
-            // btnExitFormManageLecturer
-            // 
-            this.btnExitFormManageLecturer.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExitFormManageLecturer.FlatAppearance.BorderSize = 0;
-            this.btnExitFormManageLecturer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitFormManageLecturer.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitFormManageLecturer.ForeColor = System.Drawing.Color.White;
-            this.btnExitFormManageLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageLecturer.Image")));
-            this.btnExitFormManageLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(857, 0);
-            this.btnExitFormManageLecturer.Name = "btnExitFormManageLecturer";
-            this.btnExitFormManageLecturer.Size = new System.Drawing.Size(70, 87);
-            this.btnExitFormManageLecturer.TabIndex = 13;
-            this.btnExitFormManageLecturer.UseVisualStyleBackColor = true;
-            this.btnExitFormManageLecturer.Click += new System.EventHandler(this.btnExitFormManageLecturer_Click);
             // 
             // frmManageClass
             // 

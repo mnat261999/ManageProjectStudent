@@ -407,7 +407,7 @@ namespace ManageProjectStudent_View
 
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExportList_Click(object sender, EventArgs e)
         {
             try
             {
@@ -439,49 +439,49 @@ namespace ManageProjectStudent_View
             }
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                var _DLG_OpenExcel = new OpenFileDialog();
-                _DLG_OpenExcel.Title = @"Import File Excel";
-                if (_DLG_OpenExcel.ShowDialog() == DialogResult.OK)
-                {
-                    string _STR_FileName = Path.GetFileName(_DLG_OpenExcel.FileName);
-                    // Open file excel
-                    var package = new ExcelPackage(new FileInfo(_DLG_OpenExcel.FileName));
-                    //Take out the first sheet
-                    ExcelWorksheet workSheet = package.Workbook.Worksheets[1];
-                    BindingList<StudentModel> _lstStudent_Import = new BindingList<StudentModel>();
-                    //Browse sequentially from the second to the last row of the Excel file, because Excel starts from 1 and not 0
-                    for (int i = workSheet.Dimension.Start.Row + 1; i < workSheet.Dimension.End.Row; ++i)
-                    {
-                        try
-                        {
+        //private void btnImport_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        var _DLG_OpenExcel = new OpenFileDialog();
+        //        _DLG_OpenExcel.Title = @"Import File Excel";
+        //        if (_DLG_OpenExcel.ShowDialog() == DialogResult.OK)
+        //        {
+        //            string _STR_FileName = Path.GetFileName(_DLG_OpenExcel.FileName);
+        //            // Open file excel
+        //            var package = new ExcelPackage(new FileInfo(_DLG_OpenExcel.FileName));
+        //            //Take out the first sheet
+        //            ExcelWorksheet workSheet = package.Workbook.Worksheets[1];
+        //            BindingList<StudentModel> _lstStudent_Import = new BindingList<StudentModel>();
+        //            //Browse sequentially from the second to the last row of the Excel file, because Excel starts from 1 and not 0
+        //            for (int i = workSheet.Dimension.Start.Row + 1; i < workSheet.Dimension.End.Row; ++i)
+        //            {
+        //                try
+        //                {
 
-                            int j = 1; //  j as row.
-                            string StrStudentID = "";
-                            string StrStudentName = "";
-                            DateTime DtBirthDay = new DateTime();
-                            string StrCardID = "";
-                            string StrEmail = "";
-                            string _StrAddress = "";
-                            DateTime _DtStartYear = new DateTime();
-                            bool _BStatus;
+        //                    int j = 1; //  j as row.
+        //                    string StrStudentID = "";
+        //                    string StrStudentName = "";
+        //                    DateTime DtBirthDay = new DateTime();
+        //                    string StrCardID = "";
+        //                    string StrEmail = "";
+        //                    string _StrAddress = "";
+        //                    DateTime _DtStartYear = new DateTime();
+        //                    bool _BStatus;
 
-                        }
-                        catch
-                        {
+        //                }
+        //                catch
+        //                {
 
-                        }
-                    }
-                }
-            }
-            catch
-            {
+        //                }
+        //            }
+        //        }
+        //    }
+        //    catch
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
         private void btnReLoad_Click(object sender, EventArgs e)
         {

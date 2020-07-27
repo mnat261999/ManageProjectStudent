@@ -81,7 +81,7 @@
             this.LookUpEdit_Faculty = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ColSex = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnExport = new DevExpress.XtraEditors.SimpleButton();
+            this.btnExportList = new DevExpress.XtraEditors.SimpleButton();
             this.panelMenu.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grpInformationLecturer)).BeginInit();
@@ -101,6 +101,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(25)))), ((int)(((byte)(77)))));
+            this.panelMenu.Controls.Add(this.btnExportList);
             this.panelMenu.Controls.Add(this.btnUpdate);
             this.panelMenu.Controls.Add(this.btnDelete);
             this.panelMenu.Controls.Add(this.btnAdd);
@@ -108,7 +109,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(174, 579);
+            this.panelMenu.Size = new System.Drawing.Size(186, 579);
             this.panelMenu.TabIndex = 6;
             // 
             // btnUpdate
@@ -128,9 +129,9 @@
             this.btnUpdate.AppearanceHovered.Options.UseFont = true;
             this.btnUpdate.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnUpdate.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.ImageOptions.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(0, 413);
+            this.btnUpdate.Location = new System.Drawing.Point(0, 330);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(171, 54);
+            this.btnUpdate.Size = new System.Drawing.Size(183, 54);
             this.btnUpdate.TabIndex = 12;
             this.btnUpdate.TabStop = false;
             this.btnUpdate.Text = "Sửa Giảng Viên";
@@ -153,9 +154,9 @@
             this.btnDelete.AppearanceHovered.Options.UseFont = true;
             this.btnDelete.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.ImageOptions.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(0, 499);
+            this.btnDelete.Location = new System.Drawing.Point(0, 416);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(170, 54);
+            this.btnDelete.Size = new System.Drawing.Size(182, 54);
             this.btnDelete.TabIndex = 11;
             this.btnDelete.TabStop = false;
             this.btnDelete.Text = "Xóa Giảng Viên";
@@ -180,9 +181,9 @@
             this.btnAdd.AppearanceHovered.Options.UseForeColor = true;
             this.btnAdd.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.btnAdd.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnAdd.ImageOptions.Image")));
-            this.btnAdd.Location = new System.Drawing.Point(0, 327);
+            this.btnAdd.Location = new System.Drawing.Point(0, 244);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(171, 54);
+            this.btnAdd.Size = new System.Drawing.Size(183, 54);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.TabStop = false;
             this.btnAdd.Text = "Thêm Giảng Viên";
@@ -196,7 +197,7 @@
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
             this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(174, 87);
+            this.panelLogo.Size = new System.Drawing.Size(186, 87);
             this.panelLogo.TabIndex = 5;
             // 
             // panelTitleBar
@@ -207,9 +208,9 @@
             this.panelTitleBar.Controls.Add(this.lblTitle);
             this.panelTitleBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitleBar.Font = new System.Drawing.Font("Arial", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelTitleBar.Location = new System.Drawing.Point(174, 0);
+            this.panelTitleBar.Location = new System.Drawing.Point(186, 0);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1148, 87);
+            this.panelTitleBar.Size = new System.Drawing.Size(1142, 87);
             this.panelTitleBar.TabIndex = 7;
             // 
             // btnReLoad
@@ -237,7 +238,7 @@
             this.btnExitFormManageLecturer.ForeColor = System.Drawing.Color.White;
             this.btnExitFormManageLecturer.Image = ((System.Drawing.Image)(resources.GetObject("btnExitFormManageLecturer.Image")));
             this.btnExitFormManageLecturer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(1078, 0);
+            this.btnExitFormManageLecturer.Location = new System.Drawing.Point(1072, 0);
             this.btnExitFormManageLecturer.Name = "btnExitFormManageLecturer";
             this.btnExitFormManageLecturer.Size = new System.Drawing.Size(70, 87);
             this.btnExitFormManageLecturer.TabIndex = 6;
@@ -250,7 +251,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(414, 31);
+            this.lblTitle.Location = new System.Drawing.Point(411, 31);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(274, 22);
             this.lblTitle.TabIndex = 0;
@@ -285,15 +286,15 @@
             this.grpInformationLecturer.Controls.Add(this.label4);
             this.grpInformationLecturer.Controls.Add(this.label3);
             this.grpInformationLecturer.Controls.Add(this.label2);
-            this.grpInformationLecturer.Location = new System.Drawing.Point(180, 93);
+            this.grpInformationLecturer.Location = new System.Drawing.Point(192, 93);
             this.grpInformationLecturer.Name = "grpInformationLecturer";
-            this.grpInformationLecturer.Size = new System.Drawing.Size(1130, 199);
+            this.grpInformationLecturer.Size = new System.Drawing.Size(1124, 199);
             this.grpInformationLecturer.TabIndex = 9;
             this.grpInformationLecturer.Text = "Thông Tin Giảng Viên";
             // 
             // lkeStaffType
             // 
-            this.lkeStaffType.Location = new System.Drawing.Point(466, 91);
+            this.lkeStaffType.Location = new System.Drawing.Point(522, 88);
             this.lkeStaffType.Name = "lkeStaffType";
             this.lkeStaffType.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lkeStaffType.Properties.Appearance.Options.UseFont = true;
@@ -310,7 +311,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(338, 93);
+            this.label11.Location = new System.Drawing.Point(394, 90);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(101, 17);
             this.label11.TabIndex = 125;
@@ -320,7 +321,7 @@
             // 
             this.panel2.Controls.Add(this.radAvailable);
             this.panel2.Controls.Add(this.radUnavailable);
-            this.panel2.Location = new System.Drawing.Point(466, 121);
+            this.panel2.Location = new System.Drawing.Point(522, 118);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(193, 22);
             this.panel2.TabIndex = 122;
@@ -355,7 +356,7 @@
             // 
             this.panel1.Controls.Add(this.radNam);
             this.panel1.Controls.Add(this.radNu);
-            this.panel1.Location = new System.Drawing.Point(127, 123);
+            this.panel1.Location = new System.Drawing.Point(183, 120);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(193, 24);
             this.panel1.TabIndex = 121;
@@ -402,7 +403,7 @@
             this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
             this.btnSave.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
             this.btnSave.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnSave.Location = new System.Drawing.Point(492, 158);
+            this.btnSave.Location = new System.Drawing.Point(522, 158);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(140, 36);
             this.btnSave.TabIndex = 120;
@@ -414,7 +415,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(367, 125);
+            this.label1.Location = new System.Drawing.Point(423, 122);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 17);
@@ -423,7 +424,7 @@
             // 
             // lkeFaculty
             // 
-            this.lkeFaculty.Location = new System.Drawing.Point(831, 91);
+            this.lkeFaculty.Location = new System.Drawing.Point(887, 88);
             this.lkeFaculty.Name = "lkeFaculty";
             this.lkeFaculty.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lkeFaculty.Properties.Appearance.Options.UseFont = true;
@@ -439,7 +440,7 @@
             // dteBirthday
             // 
             this.dteBirthday.EditValue = null;
-            this.dteBirthday.Location = new System.Drawing.Point(128, 60);
+            this.dteBirthday.Location = new System.Drawing.Point(184, 57);
             this.dteBirthday.Name = "dteBirthday";
             this.dteBirthday.Properties.Appearance.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dteBirthday.Properties.Appearance.Options.UseFont = true;
@@ -452,14 +453,14 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(128, 90);
+            this.txtEmail.Location = new System.Drawing.Point(184, 87);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(193, 25);
             this.txtEmail.TabIndex = 102;
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(831, 60);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(887, 57);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(193, 25);
             this.txtPhoneNumber.TabIndex = 101;
@@ -467,14 +468,14 @@
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(466, 60);
+            this.txtAddress.Location = new System.Drawing.Point(522, 57);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(193, 25);
             this.txtAddress.TabIndex = 100;
             // 
             // txtIDCard
             // 
-            this.txtIDCard.Location = new System.Drawing.Point(831, 29);
+            this.txtIDCard.Location = new System.Drawing.Point(887, 26);
             this.txtIDCard.Name = "txtIDCard";
             this.txtIDCard.Size = new System.Drawing.Size(193, 25);
             this.txtIDCard.TabIndex = 99;
@@ -482,7 +483,7 @@
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(466, 29);
+            this.txtFullName.Location = new System.Drawing.Point(522, 26);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(193, 25);
             this.txtFullName.TabIndex = 98;
@@ -490,7 +491,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(128, 29);
+            this.txtID.Location = new System.Drawing.Point(184, 26);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(193, 25);
             this.txtID.TabIndex = 97;
@@ -499,7 +500,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 125);
+            this.label10.Location = new System.Drawing.Point(90, 122);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 17);
             this.label10.TabIndex = 16;
@@ -509,7 +510,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(757, 90);
+            this.label9.Location = new System.Drawing.Point(813, 87);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 17);
             this.label9.TabIndex = 14;
@@ -519,7 +520,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(56, 93);
+            this.label8.Location = new System.Drawing.Point(112, 90);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 17);
             this.label8.TabIndex = 12;
@@ -529,7 +530,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(699, 63);
+            this.label7.Location = new System.Drawing.Point(755, 60);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(100, 17);
             this.label7.TabIndex = 10;
@@ -539,7 +540,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(383, 63);
+            this.label6.Location = new System.Drawing.Point(439, 60);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 8;
@@ -549,7 +550,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(28, 63);
+            this.label5.Location = new System.Drawing.Point(84, 60);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(74, 17);
             this.label5.TabIndex = 6;
@@ -559,7 +560,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(748, 32);
+            this.label4.Location = new System.Drawing.Point(804, 29);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 17);
             this.label4.TabIndex = 4;
@@ -569,7 +570,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(384, 32);
+            this.label3.Location = new System.Drawing.Point(440, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 17);
             this.label3.TabIndex = 2;
@@ -579,7 +580,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(5, 32);
+            this.label2.Location = new System.Drawing.Point(61, 29);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 0;
@@ -587,13 +588,13 @@
             // 
             // gcListLecturer
             // 
-            this.gcListLecturer.Location = new System.Drawing.Point(180, 298);
+            this.gcListLecturer.Location = new System.Drawing.Point(192, 298);
             this.gcListLecturer.MainView = this.gvLecturerList;
             this.gcListLecturer.Name = "gcListLecturer";
             this.gcListLecturer.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.LookUpEdit_Faculty,
             this.LookUpEdit_StaffType});
-            this.gcListLecturer.Size = new System.Drawing.Size(1130, 274);
+            this.gcListLecturer.Size = new System.Drawing.Size(1124, 274);
             this.gcListLecturer.TabIndex = 11;
             this.gcListLecturer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvLecturerList});
@@ -800,35 +801,38 @@
             this.colStatus.Visible = true;
             this.colStatus.VisibleIndex = 10;
             // 
-            // btnExport
+            // btnExportList
             // 
-            this.btnExport.Appearance.BackColor = System.Drawing.Color.Silver;
-            this.btnExport.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExport.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Appearance.Options.UseBackColor = true;
-            this.btnExport.Appearance.Options.UseFont = true;
-            this.btnExport.Appearance.Options.UseForeColor = true;
-            this.btnExport.AppearanceHovered.BackColor = System.Drawing.Color.Gray;
-            this.btnExport.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnExport.AppearanceHovered.Options.UseBackColor = true;
-            this.btnExport.AppearanceHovered.Options.UseFont = true;
-            this.btnExport.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.btnExport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.LeftCenter;
-            this.btnExport.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btnExport.Location = new System.Drawing.Point(672, 536);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(140, 36);
-            this.btnExport.TabIndex = 124;
-            this.btnExport.TabStop = false;
-            this.btnExport.Text = "Export";
-            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            this.btnExportList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExportList.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.btnExportList.Appearance.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.Appearance.Options.UseBackColor = true;
+            this.btnExportList.Appearance.Options.UseFont = true;
+            this.btnExportList.Appearance.Options.UseForeColor = true;
+            this.btnExportList.AppearanceHovered.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(71)))), ((int)(((byte)(100)))));
+            this.btnExportList.AppearanceHovered.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExportList.AppearanceHovered.ForeColor = System.Drawing.Color.White;
+            this.btnExportList.AppearanceHovered.Options.UseBackColor = true;
+            this.btnExportList.AppearanceHovered.Options.UseFont = true;
+            this.btnExportList.AppearanceHovered.Options.UseForeColor = true;
+            this.btnExportList.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.btnExportList.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExportList.ImageOptions.Image")));
+            this.btnExportList.Location = new System.Drawing.Point(0, 495);
+            this.btnExportList.Name = "btnExportList";
+            this.btnExportList.Size = new System.Drawing.Size(186, 54);
+            this.btnExportList.TabIndex = 14;
+            this.btnExportList.TabStop = false;
+            this.btnExportList.Text = "Export Danh Sách";
+            this.btnExportList.Click += new System.EventHandler(this.btnExportList_Click);
             // 
             // frmManageLecturerInformation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1322, 579);
-            this.Controls.Add(this.btnExport);
+            this.ClientSize = new System.Drawing.Size(1328, 579);
             this.Controls.Add(this.gcListLecturer);
             this.Controls.Add(this.grpInformationLecturer);
             this.Controls.Add(this.panelTitleBar);
@@ -910,10 +914,10 @@
         private DevExpress.XtraEditors.SimpleButton btnUpdate;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraEditors.SimpleButton btnAdd;
-        private DevExpress.XtraEditors.SimpleButton btnExport;
         private DevExpress.XtraEditors.LookUpEdit lkeStaffType;
         private System.Windows.Forms.Label label11;
         private DevExpress.XtraGrid.Columns.GridColumn colStaffType;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit LookUpEdit_StaffType;
+        private DevExpress.XtraEditors.SimpleButton btnExportList;
     }
 }

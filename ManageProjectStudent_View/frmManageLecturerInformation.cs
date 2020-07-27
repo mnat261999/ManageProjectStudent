@@ -512,7 +512,7 @@ namespace ManageProjectStudent_View
 
         }
 
-        private void btnExport_Click(object sender, EventArgs e)
+        private void btnExportList_Click(object sender, EventArgs e)
         {
             try
             {
