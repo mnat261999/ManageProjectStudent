@@ -159,6 +159,7 @@
             this.Name = "frmStatic";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmStatic";
+            this.Load += new System.EventHandler(this.frmStatic_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);
             this.ResumeLayout(false);

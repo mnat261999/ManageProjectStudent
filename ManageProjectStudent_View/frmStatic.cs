@@ -114,6 +114,7 @@ namespace ManageProjectStudent_View
 
         private void btnExitForm_Click(object sender, EventArgs e)
         {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
         }
 
@@ -140,6 +141,12 @@ namespace ManageProjectStudent_View
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void frmStatic_Load(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
         }
     }
 }

@@ -35,10 +35,10 @@
             this.btnManageTask = new System.Windows.Forms.Button();
             this.btnManageProjectLecturer = new System.Windows.Forms.Button();
             this.panelTitleBar = new System.Windows.Forms.Panel();
+            this.btnExitForm = new System.Windows.Forms.Button();
             this.btnCloseChildForm = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.btnExitForm = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelTitleBar.SuspendLayout();
@@ -124,6 +124,20 @@
             this.panelTitleBar.Size = new System.Drawing.Size(1005, 87);
             this.panelTitleBar.TabIndex = 2;
             // 
+            // btnExitForm
+            // 
+            this.btnExitForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExitForm.FlatAppearance.BorderSize = 0;
+            this.btnExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExitForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExitForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitForm.Image")));
+            this.btnExitForm.Location = new System.Drawing.Point(930, 0);
+            this.btnExitForm.Name = "btnExitForm";
+            this.btnExitForm.Size = new System.Drawing.Size(75, 87);
+            this.btnExitForm.TabIndex = 2;
+            this.btnExitForm.UseVisualStyleBackColor = true;
+            this.btnExitForm.Click += new System.EventHandler(this.btnExitForm_Click_1);
+            // 
             // btnCloseChildForm
             // 
             this.btnCloseChildForm.Dock = System.Windows.Forms.DockStyle.Left;
@@ -158,20 +172,6 @@
             this.panelDesktopPane.Size = new System.Drawing.Size(1005, 552);
             this.panelDesktopPane.TabIndex = 3;
             // 
-            // btnExitForm
-            // 
-            this.btnExitForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExitForm.FlatAppearance.BorderSize = 0;
-            this.btnExitForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExitForm.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExitForm.Image = ((System.Drawing.Image)(resources.GetObject("btnExitForm.Image")));
-            this.btnExitForm.Location = new System.Drawing.Point(930, 0);
-            this.btnExitForm.Name = "btnExitForm";
-            this.btnExitForm.Size = new System.Drawing.Size(75, 87);
-            this.btnExitForm.TabIndex = 2;
-            this.btnExitForm.UseVisualStyleBackColor = true;
-            this.btnExitForm.Click += new System.EventHandler(this.btnExitForm_Click_1);
-            // 
             // frmManageProjectMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +184,7 @@
             this.Name = "frmManageProjectMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManageProjectMain";
+            this.Load += new System.EventHandler(this.frmManageProjectMain_Load);
             this.panelMenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelTitleBar.ResumeLayout(false);

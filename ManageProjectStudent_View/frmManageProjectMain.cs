@@ -150,7 +150,14 @@ namespace ManageProjectStudent_View
 
         private void btnExitForm_Click_1(object sender, EventArgs e)
         {
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 30);
             this.Close();
+        }
+
+        private void frmManageProjectMain_Load(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Util.EndAnimate(this, Util.Effect.Slide, 150, 180);
         }
     }
 }
