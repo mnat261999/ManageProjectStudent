@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE52FFE2-F4E6-4D94-A05E-501CC6A8C3F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ManageProjectStudent_View</RootNamespace>
+    <AssemblyName>ManageProjectStudent_View</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Data.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dialogs.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Dialogs.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Images.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Images.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Office.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Pdf.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Printing.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Sparkline.v19.2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.Utils.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraBars.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.UI, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.2.Wizard, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraDialogs.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraDialogs.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraEditors.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraLayout.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraPrinting.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraRichEdit.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraTreeList.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v19.2, Version=19.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.2.0.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.2.0\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI">
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="JMaterialTextbox">
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\JMaterialTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="JMetroTextBox">
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\JMetroTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox">
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\JTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="JTextBox2">
+      <HintPath>D:\IT\PhanMem\Winform\Khoa CShap Winform\kem 1-3 project winform DHSP\Project - Copy\Project\Project\ManageProjectStudent_GUI\ManageProjectStudent_GUI\bin\Debug\JTextBox2.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=5.11.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.7\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.8.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.7\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DBManageProjectStudentDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBManageProjectStudentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddGroupForSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddGroupForSubject.Designer.cs">
+      <DependentUpon>frmAddGroupForSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddStudentSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddStudentSubject.Designer.cs">
+      <DependentUpon>frmAddStudentSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddWordForLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddWordForLanguage.Designer.cs">
+      <DependentUpon>frmAddWordForLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangeLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangeLanguage.Designer.cs">
+      <DependentUpon>frmChangeLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDecentralization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDecentralization.Designer.cs">
+      <DependentUpon>frmDecentralization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageClass.Designer.cs">
+      <DependentUpon>frmManageClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageCourse.Designer.cs">
+      <DependentUpon>frmManageCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageFaculty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageFaculty.Designer.cs">
+      <DependentUpon>frmManageFaculty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageLecturerInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageLecturerInformation.Designer.cs">
+      <DependentUpon>frmManageLecturerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageProject.Designer.cs">
+      <DependentUpon>frmManageProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageProjectTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageProjectTask.Designer.cs">
+      <DependentUpon>frmManageProjectTask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageStudentInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageStudentInformation.Designer.cs">
+      <DependentUpon>frmManageStudentInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageSubject.Designer.cs">
+      <DependentUpon>frmManageSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageSubjectMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageSubjectMain.Designer.cs">
+      <DependentUpon>frmManageSubjectMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageWord.Designer.cs">
+      <DependentUpon>frmManageWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaffType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaffType.Designer.cs">
+      <DependentUpon>frmStaffType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStatic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatic.Designer.cs">
+      <DependentUpon>frmStatic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStaticAmountStudentCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStaticAmountStudentCourse.Designer.cs">
+      <DependentUpon>frmStaticAmountStudentCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ThemeColor.cs" />
+    <Compile Include="Util.cs" />
+    <EmbeddedResource Include="frmAddGroupForSubject.resx">
+      <DependentUpon>frmAddGroupForSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAddStudentSubject.resx">
+      <DependentUpon>frmAddStudentSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="frmManageLanguageMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageLanguageMain.Designer.cs">
+      <DependentUpon>frmManageLanguageMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageMultiLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageMultiLanguage.Designer.cs">
+      <DependentUpon>frmManageMultiLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageProjectMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageProjectMain.Designer.cs">
+      <DependentUpon>frmManageProjectMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmManageProjectStudentMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmManageProjectStudentMain.Designer.cs">
+      <DependentUpon>frmManageProjectStudentMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSubmitProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSubmitProject.Designer.cs">
+      <DependentUpon>frmSubmitProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmViewDeadlineProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmViewDeadlineProject.Designer.cs">
+      <DependentUpon>frmViewDeadlineProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAddWordForLanguage.resx">
+      <DependentUpon>frmAddWordForLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChangeLanguage.resx">
+      <DependentUpon>frmChangeLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDecentralization.resx">
+      <DependentUpon>frmDecentralization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageClass.resx">
+      <DependentUpon>frmManageClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageCourse.resx">
+      <DependentUpon>frmManageCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageFaculty.resx">
+      <DependentUpon>frmManageFaculty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageLecturerInformation.resx">
+      <DependentUpon>frmManageLecturerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageProject.resx">
+      <DependentUpon>frmManageProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageProjectTask.resx">
+      <DependentUpon>frmManageProjectTask.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageStudentInformation.resx">
+      <DependentUpon>frmManageStudentInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageLanguageMain.resx">
+      <DependentUpon>frmManageLanguageMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageMultiLanguage.resx">
+      <DependentUpon>frmManageMultiLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageProjectMain.resx">
+      <DependentUpon>frmManageProjectMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageProjectStudentMain.resx">
+      <DependentUpon>frmManageProjectStudentMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageSubject.resx">
+      <DependentUpon>frmManageSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageSubjectMain.resx">
+      <DependentUpon>frmManageSubjectMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmManageWord.resx">
+      <DependentUpon>frmManageWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaffType.resx">
+      <DependentUpon>frmStaffType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatic.resx">
+      <DependentUpon>frmStatic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStaticAmountStudentCourse.resx">
+      <DependentUpon>frmStaticAmountStudentCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSubmitProject.resx">
+      <DependentUpon>frmSubmitProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmViewDeadlineProject.resx">
+      <DependentUpon>frmViewDeadlineProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="DBManageProjectStudentDataSet.xsc">
+      <DependentUpon>DBManageProjectStudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DBManageProjectStudentDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBManageProjectStudentDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBManageProjectStudentDataSet.xss">
+      <DependentUpon>DBManageProjectStudentDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ManageProjectStudent_Interface\ManageProjectStudent_Interface.csproj">
+      <Project>{6ed2a8ae-c379-4b32-b1b3-dd96d53836b6}</Project>
+      <Name>ManageProjectStudent_Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManageProjectStudent_Model\ManageProjectStudent_Model.csproj">
+      <Project>{d9716c79-ef4d-4524-9bd8-b0ed55de0662}</Project>
+      <Name>ManageProjectStudent_Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ManageProjectStudent_ViewModel\ManageProjectStudent_ViewModel.csproj">
+      <Project>{290b75dd-fa5a-4926-8610-d4d7b1cea511}</Project>
+      <Name>ManageProjectStudent_ViewModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Background\0078D7.png" />
+    <Content Include="Resource\Background\009CE1.png" />
+    <Content Include="Resource\Background\01ABAA.png" />
+    <Content Include="Resource\Background\0A2177.png" />
+    <Content Include="Resource\Background\11301.png" />
+    <Content Include="Resource\Background\12945.png" />
+    <Content Include="Resource\Background\12946.png" />
+    <Content Include="Resource\Background\12A08A.png" />
+    <Content Include="Resource\Background\13607.png" />
+    <Content Include="Resource\Background\13656.png" />
+    <Content Include="Resource\Background\13664.png" />
+    <Content Include="Resource\Background\14767.png" />
+    <Content Include="Resource\Background\182547.png" />
+    <Content Include="Resource\Background\191F24.png" />
+    <Content Include="Resource\Background\243240.png" />
+    <Content Include="Resource\Background\293541.png" />
+    <Content Include="Resource\Background\34495E.png" />
+    <Content Include="Resource\Background\365899.png" />
+    <Content Include="Resource\Background\376.png" />
+    <Content Include="Resource\Background\3D5B99.png" />
+    <Content Include="Resource\Background\3E3F3A.png" />
+    <Content Include="Resource\Background\4C92D0.png" />
+    <Content Include="Resource\Background\505A65.png" />
+    <Content Include="Resource\Background\509C0A.png" />
+    <Content Include="Resource\Background\520A6A.png" />
+    <Content Include="Resource\Background\5759 %281%29.png" />
+    <Content Include="Resource\Background\5759.png" />
+    <Content Include="Resource\Background\5e830c119d6c13c2d098dfd1e32854e0 %281%29.jpg" />
+    <Content Include="Resource\Background\655B51.png" />
+    <Content Include="Resource\Background\6600CE.png" />
+    <Content Include="Resource\Background\67CE00.png" />
+    <Content Include="Resource\Background\A6640C.png" />
+    <Content Include="Resource\Background\abc.png" />
+    <Content Include="Resource\Background\back-ground-dang-nhap.png" />
+    <Content Include="Resource\Background\back-ground-home.jpg" />
+    <Content Include="Resource\Background\Blue-Gradient-Background-For-Free-Download.jpg" />
+    <Content Include="Resource\Background\CBB6A1.png" />
+    <Content Include="Resource\Background\D2323F.png" />
+    <Content Include="Resource\Background\DBA800.png" />
+    <Content Include="Resource\Background\E1DDDF.png" />
+    <Content Include="Resource\Background\E87E31.png" />
+    <Content Include="Resource\Background\E8EBF3.png" />
+    <Content Include="Resource\Background\EBDFE2.png" />
+    <Content Include="Resource\Background\F9F8CC.png" />
+    <Content Include="Resource\Image\cancel_40px.png" />
+    <Content Include="Resource\Image\circled_user_100px.png" />
+    <Content Include="Resource\Image\circled_user_75px.png" />
+    <Content Include="Resource\Image\close_window_35px.png" />
+    <Content Include="Resource\Image\concept_60px.png" />
+    <Content Include="Resource\Image\concept_70px.png" />
+    <Content Include="Resource\Image\concept_80px.png" />
+    <Content Include="Resource\Image\course_assign_60px.png" />
+    <Content Include="Resource\Image\delete_35px.png" />
+    <Content Include="Resource\Image\department_60px.png" />
+    <Content Include="Resource\Image\edit_file_60px.png" />
+    <Content Include="Resource\Image\edit_file_90px.png" />
+    <Content Include="Resource\Image\english_to_arabic_80px.png" />
+    <Content Include="Resource\Image\enter_30px.png" />
+    <Content Include="Resource\Image\enter_35px.png" />
+    <Content Include="Resource\Image\file_preview_30px.png" />
+    <Content Include="Resource\Image\Fire Exit_35px.png" />
+    <Content Include="Resource\Image\glasses_30px.png" />
+    <Content Include="Resource\Image\glasses_35px.png" />
+    <Content Include="Resource\Image\google_classroom_60px.png" />
+    <Content Include="Resource\Image\graph_report_30px.png" />
+    <Content Include="Resource\Image\group_of_companies_60px.png" />
+    <Content Include="Resource\Image\icons8_male_user.ico" />
+    <Content Include="Resource\Image\icons8_male_user_48.png" />
+    <Content Include="Resource\Image\info_40px.png" />
+    <Content Include="Resource\Image\leadership_80px.png" />
+    <Content Include="Resource\Image\lock_30px.png" />
+    <Content Include="Resource\Image\lock_portrait_30px.png" />
+    <Content Include="Resource\Image\login_30px.png" />
+    <Content Include="Resource\Image\login_40px.png" />
+    <Content Include="Resource\Image\logout_rounded_up_40px.png" />
+    <Content Include="Resource\Image\male_user_48px.png" />
+    <Content Include="Resource\Image\male_user_50px%281%29.png" />
+    <Content Include="Resource\Image\male_user_50px.png" />
+    <Content Include="Resource\Image\male_user_50px_%282%29.png" />
+    <Content Include="Resource\Image\male_user_75px1.png" />
+    <Content Include="Resource\Image\menu_40px.png" />
+    <Content Include="Resource\Image\name_30px.png" />
+    <Content Include="Resource\Image\name_30px_1.png" />
+    <Content Include="Resource\Image\new_copy_100px%281%29.png" />
+    <Content Include="Resource\Image\new_copy_100px.png" />
+    <Content Include="Resource\Image\new_copy_80px.png" />
+    <Content Include="Resource\Image\nhanvien-100.png" />
+    <Content Include="Resource\Image\physics_book_60px.png" />
+    <Content Include="Resource\Image\physics_book_75px.png" />
+    <Content Include="Resource\Image\power_off_button_30px.png" />
+    <Content Include="Resource\Image\power_off_button_35px.png" />
+    <Content Include="Resource\Image\project_setup_30px.png" />
+    <Content Include="Resource\Image\project_setup_35px.png" />
+    <None Include="Resource\Image\return_30px.png" />
+    <Content Include="Resource\Image\school_60px.png" />
+    <Content Include="Resource\Image\search_100px.png" />
+    <Content Include="Resource\Image\search_48px.png" />
+    <Content Include="Resource\Image\search_more_30px.png" />
+    <Content Include="Resource\Image\search_more_35px.png" />
+    <Content Include="Resource\Image\shutdown_30px.png" />
+    <Content Include="Resource\Image\shutdown_35px.png" />
+    <Content Include="Resource\Image\shutdown_40px.png" />
+    <Content Include="Resource\Image\students_80px.png" />
+    <Content Include="Resource\Image\student_male_60px.png" />
+    <Content Include="Resource\Image\student_male_70px.png" />
+    <Content Include="Resource\Image\student_male_80px.png" />
+    <Content Include="Resource\Image\student_male_90px.png" />
+    <Content Include="Resource\Image\submit_document_30px.png" />
+    <Content Include="Resource\Image\submit_document_35px.png" />
+    <Content Include="Resource\Image\task_90px.png" />
+    <Content Include="Resource\Image\task_completed_30px%281%29.png" />
+    <Content Include="Resource\Image\teacher_60px.png" />
+    <Content Include="Resource\Image\teacher_80px.png" />
+    <Content Include="Resource\Image\user_100px.png" />
+    <Content Include="Resource\Image\user_30px.png" />
+    <Content Include="Resource\Image\user_50px.png" />
+    <Content Include="Resource\Image\user_manual_35px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="File\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
